@@ -187,19 +187,29 @@
 				}
 			});
 
-	document.addEventListener("DOMContentLoaded", function () {
-  	const modal = document.getElementById("gameModal");
-  	const iframe = document.getElementById("gameFrame");
+// Space Invaders Modal
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("gameModal");
+  const iframe = document.getElementById("gameFrame");
 
-  	document.getElementById("openGame").addEventListener("click", function () {
-    iframe.src = "games/space_invaders/space_invaders.html";
+  document.getElementById("openGame").addEventListener("click", function () {
+    iframe.src = "games/space_invaders/game.html";
+    
     modal.style.display = "block";
-  	});
+  });
 
-  	document.getElementById("closeGame").addEventListener("click", function () {
-    iframe.src = "";
+  document.getElementById("closeGame").addEventListener("click", function () {
+    iframe.src = ""; // This stops the game from running
     modal.style.display = "none";
-  	});
+  });
+  
+  // Close modal when clicking outside of it
+  modal.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      iframe.src = "";
+      modal.style.display = "none";
+    }
+  });
 });
 
 })(jQuery);
