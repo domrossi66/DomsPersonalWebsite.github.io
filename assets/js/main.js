@@ -187,4 +187,19 @@
 				}
 			});
 
+	document.addEventListener("DOMContentLoaded", function () {
+  	const modal = document.getElementById("gameModal");
+  	const iframe = document.getElementById("gameFrame");
+
+  	document.getElementById("openGame").addEventListener("click", function () {
+    iframe.src = "games/space_invaders/space_invaders.html";
+    modal.style.display = "block";
+  	});
+
+  	document.getElementById("closeGame").addEventListener("click", function () {
+    iframe.src = "";
+    modal.style.display = "none";
+  	});
+});
+
 })(jQuery);

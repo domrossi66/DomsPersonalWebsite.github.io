@@ -3907,3 +3907,38 @@ input, select, textarea {
 			}
 
 		}
+
+	/* Space Invaders */
+	.game-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10000;
+}
+
+.game-modal-content {
+  position: relative;
+  width: 860px;
+  max-width: 95%;
+  margin: 5vh auto;
+  background: #000;
+}
+
+.game-modal iframe {
+  border: none;
+  display: block;
+  width: 100%;
+  height: 640px;
+}
+
+.game-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #fff;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+}
